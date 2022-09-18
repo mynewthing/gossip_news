@@ -26,33 +26,23 @@ export function HeaderNav(props: IHeaderNavProps): JSX.Element {
       )}
       {userId && ' | '}
       <Link href="/newest">
-        <a className={currentUrl === '/newest' ? 'topsel' : ''}>new</a>
+        <a className={currentUrl === '/newest' ? 'topsel' : ''}>NEWS</a>
       </Link>
-      {userId && ' | '}
-      {userId && (
-        <Link href={`/threads?id=${userId}`}>
-          <a className={currentUrl === '/threads' ? 'topsel' : ''}>threads</a>
-        </Link>
-      )}
       {' | '}
       <Link href="/newcomments">
-        <a className={currentUrl === '/newcomments' ? 'topsel' : ''}>comments</a>
+        <a className={currentUrl === '/newcomments' ? 'topsel' : ''}>PAST</a>
       </Link>
       {' | '}
       <Link href="/show">
-        <a className={currentUrl === '/show' ? 'topsel' : ''}>show</a>
+        <a className={currentUrl === '/show' ? 'topsel' : ''}>TV</a>
       </Link>
       {' | '}
       <Link href="/ask">
-        <a className={currentUrl === '/ask' ? 'topsel' : ''}>ask</a>
-      </Link>
-      {' | '}
-      <Link href="/jobs">
-        <a className={currentUrl === '/jobs' ? 'topsel' : ''}>jobs</a>
+        <a className={currentUrl === '/ask' ? 'topsel' : ''}>FILM</a>
       </Link>
       {' | '}
       <Link href="/submit">
-        <a className={currentUrl === '/submit' ? 'topsel' : ''}>submit</a>
+        <a className={currentUrl === '/submit' ? 'topsel' : ''}>SUBMIT</a>
       </Link>
       {currentUrl === '/best' && ' | '}
       {currentUrl === '/best' && (
