@@ -33,7 +33,7 @@ export function NewsTitle(props: INewsTitleProps): JSX.Element {
   });
 
   return (
-    <tr className="athing">
+    <tr className="athing" style={{ margin: '100px' }}>
       <td style={{ textAlign: 'right', verticalAlign: 'top' }} className="title">
         <span className="rank">{isRankVisible && `${rank}.`}</span>
       </td>

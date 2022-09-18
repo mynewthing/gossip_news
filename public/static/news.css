@@ -1,4 +1,4 @@
-body  { font-family:Verdana, Geneva, sans-serif; font-size:10pt; color:#828282; }
+body  { font-family:Verdana, Geneva, sans-serif; font-size:10pt; color:#828282; background-color: #dadfe7; }
 td    { font-family:Verdana, Geneva, sans-serif; font-size:10pt; color:#828282; }
 
 .admin td   { font-family:Verdana, Geneva, sans-serif; font-size:8.5pt; color:#000000; }
@@ -21,7 +21,7 @@ a:visited { color:#828282; text-decoration:none; }
 .comment { font-family:Verdana, Geneva, sans-serif; font-size:  9pt; }
 .hnname  { margin-right: 5px; font-size: 20pt;}
 #navbarcolor {color: #ffffff}
-.itemlist tr{ height: 10px; padding: 4px;}
+.itemlist tr{ height: 10px; padding-top: 4px;padding-bottom: 4px;}
 
 .comment a:link, .comment a:visited { text-decoration: underline; }
 .noshow { display: none; }
@@ -56,12 +56,12 @@ pre { overflow: auto; padding: 2px; }
 pre:hover { overflow:auto }
 
 .votearrow {
-  width:      10px;
-  height:     10px;
+  width:      12px;
+  height:     12px;
   border:     0px;
   margin:     3px 2px 6px;
-  padding-right: 8px;
-  background: url("/static/grayarrow.gif")
+  padding-right: 0px;
+  background: url("/static/upArrow.svg")
   no-repeat;
 }
 
@@ -70,7 +70,7 @@ pre:hover { overflow:auto }
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
-  .votearrow { background-size: 10px; background-image: url("/static/grayarrow2x.gif"); }
+  .votearrow { background-size: 10px; background-image: url("/static/upArrow.svg"); }
 }
 
 .rotate180 {

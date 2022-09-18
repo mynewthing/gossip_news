@@ -53,6 +53,7 @@ export function NewsFeedView(props: INewsFeedProps): JSX.Element {
             padding: '0px',
             borderCollapse: 'collapse',
             borderSpacing: '0px',
+            width: '100%',
           }}
           className="itemlist"
         >
@@ -62,6 +63,13 @@ export function NewsFeedView(props: INewsFeedProps): JSX.Element {
               {newsItems
                 .filter((newsItem): newsItem is NewsItemModel => !!newsItem && !newsItem.hidden)
                 .flatMap((newsItem, index) => [
+                  <tr
+                    className="spacer"
+                    key={`${newsItem.id}spacer`}
+                    style={{
+                      height: 10,
+                    }}
+                  />,
                   <NewsTitle
                     key={`${newsItem.id}title`}
                     isRankVisible={isRankVisible}
@@ -76,7 +84,14 @@ export function NewsFeedView(props: INewsFeedProps): JSX.Element {
                     isJobListing={isJobListing}
                     {...newsItem}
                   />,
-                  <tr className="spacer" key={`${newsItem.id}spacer`} style={{ height: 5 }} />,
+                  <tr
+                    className="spacer"
+                    key={`${newsItem.id}spacer`}
+                    style={{
+                      height: 10,
+                      borderBottom: '1pt solid #cccccc',
+                    }}
+                  />,
                 ])}
               <tr key="morespace" className="morespace" style={{ height: '10px' }} />
               <tr key="morelinktr">

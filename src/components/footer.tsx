@@ -4,7 +4,7 @@ import * as React from 'react';
 export function Footer(): JSX.Element {
   return (
     <tr>
-      <td style={{ padding: '0px' }}>
+      <td style={{ padding: '0px', backgroundColor: '#ffffff' }}>
         <img alt="" src="/static/s.gif" height="10" width="0" />
         <table style={{ height: '2px', width: '100%', borderSpacing: '0px' }}>
           <tbody>

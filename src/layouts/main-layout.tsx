@@ -38,14 +38,12 @@ export function MainLayout(props: IMainLayoutProps): JSX.Element {
       <table
         id="hnmain"
         style={{
-          backgroundColor: '#f6f6ef',
-          border: '0px',
-          borderCollapse: 'collapse',
-          borderSpacing: '0px',
+          backgroundColor: '#ffffff',
           marginLeft: 'auto',
           marginRight: 'auto',
           padding: '0px',
           width: '85%',
+          boxShadow: '0px 0px 10px rgb(246,245,245,1)',
         }}
       >
         <tbody>
@@ -55,7 +53,7 @@ export function MainLayout(props: IMainLayoutProps): JSX.Element {
             me={data?.me}
             title={title!}
           />
-          <tr style={{ height: '10px' }} />
+          <tr style={{ height: '10px', backgroundColor: '#ffffff' }} />
           {children}
           {isFooterVisible && <Footer />}
         </tbody>
