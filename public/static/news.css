@@ -56,13 +56,23 @@ pre { overflow: auto; padding: 2px; }
 pre:hover { overflow:auto }
 
 .votearrow {
-  width:      12px;
-  height:     12px;
+  width:      20px;
+  height:     25px;
   border:     0px;
-  margin:     3px 2px 6px;
-  padding-right: 0px;
-  background: url("/static/upArrow.svg")
-  no-repeat;
+  margin:     3px 2px 6px 1px;
+  background: url("/static/upArrow.svg") no-repeat;
+  background-size: 100% 100%;
+
+}
+
+.downarrow {
+  width:      20px;
+  height:     25px;
+  border:     0px;
+  margin:     3px 2px 6px 1px;
+  background: url("/static/downArrow.svg") no-repeat;
+  background-size: 100% 100%;
+
 }
 
 .votelinks.nosee div.votearrow.rotate180 {

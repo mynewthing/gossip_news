@@ -65,7 +65,7 @@ export function NewsFeedView(props: INewsFeedProps): JSX.Element {
                 .flatMap((newsItem, index) => [
                   <tr
                     className="spacer"
-                    key={`${newsItem.id}spacer`}
+                    key={`${newsItem.id}spacer1`}
                     style={{
                       height: 10,
                     }}

@@ -37,17 +37,33 @@ export function NewsTitle(props: INewsTitleProps): JSX.Element {
       <td style={{ textAlign: 'right', verticalAlign: 'top' }} className="title">
         <span className="rank">{isRankVisible && `${rank}.`}</span>
       </td>
-      <td style={{ verticalAlign: 'top' }} className="votelinks">
-        <div style={{ textAlign: 'center' }}>
-          {isUpvoteVisible && (
-            <a
-              className={upvoted ? 'nosee' : ' '}
-              onClick={(): Promise<any> => upvoteNewsItem()}
-              style={{ cursor: 'pointer' }}
-            >
-              <div className="votearrow" title="upvote" />
-            </a>
-          )}
+      <td style={{ verticalAlign: 'top', textAlign: 'center' }} className="votelinks">
+        <div>
+          <div>
+            {isUpvoteVisible && (
+              <a
+                className={upvoted ? 'nosee' : ' '}
+                onClick={(): Promise<any> => upvoteNewsItem()}
+                style={{ cursor: 'pointer' }}
+              >
+                <div className="votearrow" title="upvote" />
+              </a>
+            )}
+          </div>
+          <div style={{ margin: '0px', padding: '0px' }}>
+            <span style={{ margin: '0px' }}>5</span>
+          </div>
+          <div>
+            {isUpvoteVisible && (
+              <a
+                className={upvoted ? 'nosee' : ' '}
+                onClick={(): Promise<any> => upvoteNewsItem()}
+                style={{ cursor: 'pointer' }}
+              >
+                <div className="downarrow" title="downvote" />
+              </a>
+            )}
+          </div>
         </div>
       </td>
       <td className="title">
