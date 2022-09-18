@@ -14,13 +14,14 @@ a:visited { color:#828282; text-decoration:none; }
 .default { font-family:Verdana, Geneva, sans-serif; font-size: 10pt; color:#828282; }
 .admin   { font-family:Verdana, Geneva, sans-serif; font-size:8.5pt; color:#000000; }
 .title   { font-family:Verdana, Geneva, sans-serif; font-size: 10pt; color:#828282; }
-.subtext { font-family:Verdana, Geneva, sans-serif; font-size:  7pt; color:#828282; }
+.subtext { font-family:Verdana, Geneva, sans-serif; font-size:  9pt; color:#828282; }
 .yclinks { font-family:Verdana, Geneva, sans-serif; font-size:  8pt; color:#828282; }
 .pagetop { font-family:Verdana, Geneva, sans-serif; font-size: 10pt; color:#ffffff; }
 .comhead { font-family:Verdana, Geneva, sans-serif; font-size:  8pt; color:#828282; }
 .comment { font-family:Verdana, Geneva, sans-serif; font-size:  9pt; }
 .hnname  { margin-right: 5px; font-size: 20pt;}
 #navbarcolor {color: #ffffff}
+.itemlist tr{ height: 10px; padding: 4px;}
 
 .comment a:link, .comment a:visited { text-decoration: underline; }
 .noshow { display: none; }
@@ -59,6 +60,7 @@ pre:hover { overflow:auto }
   height:     10px;
   border:     0px;
   margin:     3px 2px 6px;
+  padding-right: 8px;
   background: url("/static/grayarrow.gif")
   no-repeat;
 }
