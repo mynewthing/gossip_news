@@ -15,39 +15,52 @@ export function HeaderNav(props: IHeaderNavProps): JSX.Element {
     <span className="pagetop">
       <b className="hnname">
         <Link href="/" as="/news">
-          <a>{title}</a>
+          <a id="navbarcolor">{title}</a>
         </Link>
       </b>
+      <br />
       &nbsp;
       {userId && (
         <Link href="/newswelcome">
-          <a>welcome</a>
+          <a id="navbarcolor">welcome</a>
         </Link>
       )}
       {userId && ' | '}
       <Link href="/newest">
-        <a className={currentUrl === '/newest' ? 'topsel' : ''}>NEWS</a>
+        <a className={currentUrl === '/newest' ? 'topsel' : ''} id="navbarcolor">
+          NEWS
+        </a>
       </Link>
       {' | '}
       <Link href="/newcomments">
-        <a className={currentUrl === '/newcomments' ? 'topsel' : ''}>PAST</a>
+        <a className={currentUrl === '/newcomments' ? 'topsel' : ''} id="navbarcolor">
+          PAST
+        </a>
       </Link>
       {' | '}
       <Link href="/show">
-        <a className={currentUrl === '/show' ? 'topsel' : ''}>TV</a>
+        <a className={currentUrl === '/show' ? 'topsel' : ''} id="navbarcolor">
+          TV
+        </a>
       </Link>
       {' | '}
       <Link href="/ask">
-        <a className={currentUrl === '/ask' ? 'topsel' : ''}>FILM</a>
+        <a className={currentUrl === '/ask' ? 'topsel' : ''} id="navbarcolor">
+          FILM
+        </a>
       </Link>
       {' | '}
       <Link href="/submit">
-        <a className={currentUrl === '/submit' ? 'topsel' : ''}>SUBMIT</a>
+        <a className={currentUrl === '/submit' ? 'topsel' : ''} id="navbarcolor">
+          SUBMIT
+        </a>
       </Link>
       {currentUrl === '/best' && ' | '}
       {currentUrl === '/best' && (
         <Link href="/best">
-          <a className="topsel">best</a>
+          <a className="topsel" id="navbarcolor">
+            best
+          </a>
         </Link>
       )}
     </span>

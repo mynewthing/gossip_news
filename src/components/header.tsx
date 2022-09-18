@@ -15,7 +15,7 @@ export function Header(props: IHeaderProps): JSX.Element {
 
   return (
     <tr>
-      <td style={{ backgroundColor: '#ff6600', padding: '0px' }}>
+      <td style={{ backgroundColor: '#9971cd', padding: '0px' }}>
         <table style={{ border: '0px', padding: '2px', borderSpacing: '0px', width: '100%' }}>
           <tbody>
             <tr>
@@ -35,18 +35,25 @@ export function Header(props: IHeaderProps): JSX.Element {
                   </a>
                 </Link>
               </td>
-              <td style={{ lineHeight: '12px', height: '10px', padding: '0px' }}>
+              <td style={{ lineHeight: '20px', height: '60px', padding: '4px' }}>
                 <HeaderNav currentUrl={currentUrl} isNavVisible={isNavVisible} title={title} />
               </td>
-              <td style={{ textAlign: 'right', padding: '0px', paddingRight: '4px' }}>
+              <td
+                style={{
+                  textAlign: 'right',
+                  padding: '0px',
+                  paddingRight: '4px',
+                }}
+              >
                 {me ? (
                   <span className="pagetop">
                     <Link href={`/user?id=${me.id}`}>
-                      <a>{me.id}</a>
+                      <a id="navbarcolor">{me.id}</a>
                     </Link>
                     {` (${me.karma}) | `}
                     <a
                       href={`/logout?auth=d78ccc2c6120ffe08f32451519c2ff46d34c51ab&amp;goto=${currentUrl}`}
+                      id="navbarcolor"
                     >
                       logout
                     </a>
@@ -54,7 +61,7 @@ export function Header(props: IHeaderProps): JSX.Element {
                 ) : (
                   <span className="pagetop">
                     <Link href={`/login?goto=${currentUrl}`}>
-                      <a>login</a>
+                      <a id="navbarcolor">login</a>
                     </Link>
                   </span>
                 )}
