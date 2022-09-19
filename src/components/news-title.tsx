@@ -13,6 +13,7 @@ export interface INewsTitleProps {
   title: string;
   url?: string;
   upvoted?: boolean;
+  upvoteCount: number;
 }
 
 export const newsTitleFragment = `
@@ -21,11 +22,21 @@ export const newsTitleFragment = `
     title
     url
     upvoted
+    upvoteCount
   }
 `;
 
 export function NewsTitle(props: INewsTitleProps): JSX.Element {
-  const { id, isRankVisible = true, isUpvoteVisible = true, rank, title, upvoted, url } = props;
+  const {
+    id,
+    isRankVisible = true,
+    isUpvoteVisible = true,
+    rank,
+    title,
+    upvoted,
+    url,
+    upvoteCount,
+  } = props;
 
   const [upvoteNewsItem] = useMutation(UPVOTE_NEWS_ITEM_MUTATION, {
     onError: () => Router.push('/login', `/vote?id=${id}&how=up&goto=news`),
@@ -37,7 +48,10 @@ export function NewsTitle(props: INewsTitleProps): JSX.Element {
       <td style={{ textAlign: 'right', verticalAlign: 'top' }} className="title">
         <span className="rank">{isRankVisible && `${rank}.`}</span>
       </td>
-      <td style={{ verticalAlign: 'top', textAlign: 'center' }} className="votelinks">
+      <td
+        style={{ verticalAlign: 'top', textAlign: 'center', float: 'left' }}
+        className="votelinks"
+      >
         <div>
           <div>
             {isUpvoteVisible && (
@@ -50,8 +64,8 @@ export function NewsTitle(props: INewsTitleProps): JSX.Element {
               </a>
             )}
           </div>
-          <div style={{ margin: '0px', padding: '0px' }}>
-            <span style={{ margin: '0px' }}>5</span>
+          <div>
+            <span style={{ padding: '1px' }}>{upvoteCount}</span>
           </div>
           <div>
             {isUpvoteVisible && (
