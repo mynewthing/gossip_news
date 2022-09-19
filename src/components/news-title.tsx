@@ -44,57 +44,29 @@ export function NewsTitle(props: INewsTitleProps): JSX.Element {
   });
 
   return (
-    <tr className="athing">
-      <td style={{ textAlign: 'right', verticalAlign: 'top' }} className="title">
-        <span className="rank">{isRankVisible && `${rank}.`}</span>
-      </td>
-      <td
-        style={{ verticalAlign: 'top', textAlign: 'center', float: 'left' }}
-        className="votelinks"
-      >
-        <div>
-          <div>
-            {isUpvoteVisible && (
-              <a
-                className={upvoted ? 'nosee' : ' '}
-                onClick={(): Promise<any> => upvoteNewsItem()}
-                style={{ cursor: 'pointer' }}
-              >
-                <div className="votearrow" title="upvote" />
-              </a>
-            )}
-          </div>
-          <div>
-            <span style={{ padding: '1px' }}>{upvoteCount}</span>
-          </div>
-          <div>
-            {isUpvoteVisible && (
-              <a
-                className={upvoted ? 'nosee' : ' '}
-                onClick={(): Promise<any> => upvoteNewsItem()}
-                style={{ cursor: 'pointer' }}
-              >
-                <div className="downarrow" title="downvote" />
-              </a>
-            )}
-          </div>
-        </div>
-      </td>
-      <td className="title">
-        <a className="storylink" href={url || `item?id=${id}`}>
-          {title}
-        </a>
-        {url && (
-          <span className="sitebit comhead">
-            {' '}
-            (
-            <a href={`from?site=${parse(url).hostname}`}>
-              <span className="sitestr">{parse(url).hostname}</span>
+    <table>
+      <tbody>
+        <tr className="athing">
+          <td style={{ textAlign: 'right', verticalAlign: 'top' }} className="title">
+            <span className="rank">{isRankVisible && `${rank}.`}</span>
+          </td>
+          <td className="title">
+            <a className="storylink" href={url || `item?id=${id}`}>
+              {title}
             </a>
-            )
-          </span>
-        )}
-      </td>
-    </tr>
+            {url && (
+              <span className="sitebit comhead">
+                {' '}
+                (
+                <a href={`from?site=${parse(url).hostname}`}>
+                  <span className="sitestr">{parse(url).hostname}</span>
+                </a>
+                )
+              </span>
+            )}
+          </td>
+        </tr>
+      </tbody>
+    </table>
   );
 }

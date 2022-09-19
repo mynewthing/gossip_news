@@ -54,62 +54,70 @@ export function NewsDetail(props: INewsDetailProps): JSX.Element {
   const unhideNewsItem = (): void => undefined;
 
   return isJobListing ? (
-    <tr>
-      <td colSpan={2} />
-      <td className="subtext">
-        <span className="age">
-          <Link href={`/item?id=${id}`}>
-            <a>{convertNumberToTimeAgo(creationTime)}</a>
-          </Link>
-        </span>
-      </td>
-    </tr>
+    <table>
+      <tbody>
+        <tr>
+          <td colSpan={2} />
+          <td className="subtext">
+            <span className="age">
+              <Link href={`/item?id=${id}`}>
+                <a>{convertNumberToTimeAgo(creationTime)}</a>
+              </Link>
+            </span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   ) : (
-    <tr>
-      <td colSpan={2} />
-      <td className="subtext">
-        <span className="score">{upvoteCount} points</span>
-        {' by '}
-        <Link href={`/user?id=${submitterId}`}>
-          <a className="hnuser">{submitterId}</a>
-        </Link>{' '}
-        <span className="age">
-          <Link href={`/item?id=${id}`}>
-            <a>{convertNumberToTimeAgo(creationTime)}</a>
-          </Link>
-        </span>
-        {' | '}
-        {hidden ? (
-          <a onClick={(): void => unhideNewsItem()} style={HIDE_BUTTON_STYLE}>
-            unhide
-          </a>
-        ) : (
-          <a onClick={(): Promise<any> => hideNewsItem()} style={HIDE_BUTTON_STYLE}>
-            hide
-          </a>
-        )}
-        {isPostScrutinyVisible && (
-          <span>
+    <table>
+      <tbody>
+        <tr>
+          <td colSpan={1} />
+          <td className="subtext">
+            <span className="score">{upvoteCount} points</span>
+            {' by '}
+            <Link href={`/user?id=${submitterId}`}>
+              <a className="hnuser">{submitterId}</a>
+            </Link>{' '}
+            <span className="age">
+              <Link href={`/item?id=${id}`}>
+                <a>{convertNumberToTimeAgo(creationTime)}</a>
+              </Link>
+            </span>
             {' | '}
-            <a href="https://hn.algolia.com/?query=Sublime%20Text%203.0&sort=byDate&dateRange=all&type=story&storyText=false&prefix&page=0">
-              past
-            </a>
+            {hidden ? (
+              <a onClick={(): void => unhideNewsItem()} style={HIDE_BUTTON_STYLE}>
+                unhide
+              </a>
+            ) : (
+              <a onClick={(): Promise<any> => hideNewsItem()} style={HIDE_BUTTON_STYLE}>
+                hide
+              </a>
+            )}
+            {isPostScrutinyVisible && (
+              <span>
+                {' | '}
+                <a href="https://hn.algolia.com/?query=Sublime%20Text%203.0&sort=byDate&dateRange=all&type=story&storyText=false&prefix&page=0">
+                  past
+                </a>
+                {' | '}
+                <a href="https://www.google.com/search?q=Sublime%20Text%203.0">web</a>
+              </span>
+            )}
             {' | '}
-            <a href="https://www.google.com/search?q=Sublime%20Text%203.0">web</a>
-          </span>
-        )}
-        {' | '}
-        <Link href={`/item?id=${id}`}>
-          <a>
-            {commentCount === 0
-              ? 'discuss'
-              : commentCount === 1
-              ? '1 comment'
-              : `${commentCount} comments`}
-          </a>
-        </Link>
-        {isFavoriteVisible && ' | favorite'}
-      </td>
-    </tr>
+            <Link href={`/item?id=${id}`}>
+              <a>
+                {commentCount === 0
+                  ? 'discuss'
+                  : commentCount === 1
+                  ? '1 comment'
+                  : `${commentCount} comments`}
+              </a>
+            </Link>
+            {isFavoriteVisible && ' | favorite'}
+          </td>
+        </tr>
+      </tbody>
+    </table>
   );
 }

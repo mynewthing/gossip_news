@@ -5,6 +5,7 @@ import { NewsItemModel } from '../data/models';
 import { LoadingSpinner } from './loading-spinner';
 import { NewsDetail, newsDetailNewsItemFragment } from './news-detail';
 import { NewsTitle, newsTitleFragment } from './news-title';
+import { NewsUpvote, newsUpvoteFragment } from './news-upvote';
 
 export interface INewsFeedProps {
   currentUrl: string;
@@ -24,9 +25,11 @@ export const newsFeedNewsItemFragment = `
     hidden
     ...NewsTitle
     ...NewsDetail
+    ...NewsUpvote
   }
   ${newsTitleFragment}
   ${newsDetailNewsItemFragment}
+  ${newsUpvoteFragment}
 `;
 
 export function NewsFeedView(props: INewsFeedProps): JSX.Element {
@@ -70,20 +73,31 @@ export function NewsFeedView(props: INewsFeedProps): JSX.Element {
                       height: 10,
                     }}
                   />,
-                  <NewsTitle
-                    key={`${newsItem.id}title`}
-                    isRankVisible={isRankVisible}
-                    isUpvoteVisible={isUpvoteVisible}
-                    rank={skip + index + 1}
-                    {...newsItem}
-                  />,
-                  <NewsDetail
-                    key={`${newsItem.id}detail`}
-                    isFavoriteVisible={false}
-                    isPostScrutinyVisible={isPostScrutinyVisible}
-                    isJobListing={isJobListing}
-                    {...newsItem}
-                  />,
+                  <tr key={`${newsItem.id}row`}>
+                    <td>
+                      <NewsUpvote
+                        key={`${newsItem.id}upvote`}
+                        isUpvoteVisible={isUpvoteVisible}
+                        {...newsItem}
+                      />
+                    </td>
+                    <td>
+                      <NewsTitle
+                        key={`${newsItem.id}title`}
+                        isRankVisible={isRankVisible}
+                        isUpvoteVisible={isUpvoteVisible}
+                        rank={skip + index + 1}
+                        {...newsItem}
+                      />
+                      <NewsDetail
+                        key={`${newsItem.id}detail`}
+                        isFavoriteVisible={false}
+                        isPostScrutinyVisible={isPostScrutinyVisible}
+                        isJobListing={isJobListing}
+                        {...newsItem}
+                      />
+                    </td>
+                  </tr>,
                   <tr
                     className="spacer"
                     key={`${newsItem.id}spacer`}
